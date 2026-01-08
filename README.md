@@ -1,25 +1,33 @@
 # API Testing Practice
 
-Hands-on practice repository for API testing, focusing on test case design, response validation, and basic QA workflows.
+This repository is a hands-on practice project for API testing using public REST APIs.
 
-## 🎯 Objectives
-- Practice manual API testing using public REST APIs
+## Purpose
+- Practice manual API testing
 - Design clear and structured test cases
-- Validate status codes, headers, and response bodies
-- Document test results and potential issues
+- Validate response status codes, headers, and bodies
+- Get familiar with Postman and basic QA workflows
 
-## 🧪 Tested APIs
+## API Used
 - Reqres API (https://reqres.in)
-- More public APIs will be added gradually
 
-## 📂 Project Structure
+## Project Structure
+api-testing-practice/
+├─ README.md
+├─ postman/
+│  └─ reqres.postman_collection.json
+└─ test-cases/
+   └─ list-users.md
+   
+## Test Cases
+- GET List Users (completed)
+- GET Single User (planned)
+- POST Create User (planned)
+- Login scenarios (planned)
 
-## 🛠 Tools & Skills
-- Manual API Testing
-- Test case design
-- HTTP methods (GET, POST, PUT, DELETE)
-- Status code & response validation
-- Git & GitHub basic workflow
+## Tools
+- Postman
+- GitHub
 
-## 📈 Learning Focus
-This project is used to strengthen QA fundamentals and build a practical portfolio for Junior QA / Testing Engineer roles.
+## Notes
+This project is part of my preparation for Junior QA / Testing Engineer roles.

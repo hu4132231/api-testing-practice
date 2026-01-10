@@ -30,4 +30,4 @@ api-testing-practice/
 - GitHub
 
 ## Notes
-This project is part of my preparation for Junior QA / Testing Engineer roles.
+This project is continuously updated as I practice API testing and test case design for Junior QA / Testing Engineer roles.

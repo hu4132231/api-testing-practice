@@ -70,4 +70,46 @@ Verify API behavior when the page parameter is invalid.
 - No server error (5xx) occurs
 
 **Notes**
-- This scenario is validated by modifying the query parameter in an exis
+- This scenario is validated by modifying the query parameter in an existing Postman request.
+- No separate request is created to avoid duplication.
+
+---
+
+### TC-LU-003: Request with page parameter exceeding available pages
+
+**Description**  
+Verify API behavior when the requested page exceeds available data.
+
+**Request**
+- GET `/users?page=999`
+
+**Expected Results**
+- Status code is `200`
+- `data` field exists and is an empty array
+- Response structure remains valid
+- Response time is under 800ms
+
+---
+
+## Postman Assertions Mapping
+
+### TC-LU-001
+- Status code is 200
+- Response is JSON
+- `data` exists and is an array
+- `data.length > 0`
+- Required user fields validation
+- Response time < 800ms
+
+### TC-LU-003
+- Status code is 200
+- Response is JSON
+- `data` exists and is an array
+- `data.length === 0`
+- Response time < 800ms
+
+---
+
+## Notes
+- This API is commonly used for frontend user list rendering.
+- Test cases focus on API contract stability and frontend safety rather than backend business logic.

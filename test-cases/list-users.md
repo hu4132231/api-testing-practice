@@ -1,21 +1,29 @@
-# GET /users?page=2 — List Users API
+# GET /users — List Users API
 
 ## Test Objective
-Verify that the List Users API returns a valid list of users with the correct data structure, data types, and acceptable performance for frontend user listing.
+Verify that the List Users API returns user list data with correct structure, valid field types, and acceptable performance for frontend user listing scenarios.
+
+---
 
 ## Endpoint
-GET https://reqres.in/api/users?page=2
+GET https://reqres.in/api/users
+
+---
 
 ## Test Scope
-- Response status and format
-- User list data structure and required fields
-- Basic data validation
+- HTTP response status and format
+- User list data structure
+- Required user fields and basic data validation
 - API response performance
+
+---
 
 ## Out of Scope
 - Authentication / authorization
-- Data persistence
-- Backend data source validation
+- Backend data persistence
+- Database or external service validation
+
+---
 
 ## Preconditions
 - API base URL is reachable
@@ -23,70 +31,43 @@ GET https://reqres.in/api/users?page=2
 
 ---
 
-## Positive Test Cases
+## Test Cases
 
 ### TC-LU-001: Successful retrieval of user list
 
-**Steps**
-1. Send a GET request to `/users?page=2`
+**Description**  
+Verify that the API returns a non-empty list of users for a valid page number.
+
+**Request**
+- GET `/users?page=2`
 
 **Expected Results**
-- HTTP status code is `200`
+- Status code is `200`
 - Response format is JSON
 - `data` field exists and is a non-empty array
-- Each user object contains the following fields:
+- Each user object contains:
   - `id` (number)
   - `email` (string, contains "@")
   - `first_name` (string)
   - `last_name` (string)
   - `avatar` (string, valid URL)
-- Response time is less than 800ms
+- Response time is under 800ms
 
 ---
-
-## Negative / Edge Test Cases
 
 ### TC-LU-002: Request with invalid page parameter
 
-**Input**
-- GET /users?page=invalid
+**Description**  
+Verify API behavior when the page parameter is invalid.
 
-**Expected Results**
-- Status code is 200
-- Response structure remains valid
-- API returns default user list
-- No server error (5xx) occurs
-
-**Actual Result**
-- API returned a valid user list with status code 200
-
-### TC-LU-003: Request with page parameter exceeding available pages
-**Input**
-- GET `/users?page=999`
+**Request**
+- GET `/users?page=invalid`
 
 **Expected Results**
 - Status code is `200`
-- `data` field exists and is an empty array
+- Response structure remains valid
+- API falls back to default behavior
+- No server error (5xx) occurs
 
----
-
-## Assertions Mapping (Postman)
-
-| Assertion | Purpose |
-|---------|--------|
-| Status code = 200 | Confirms API request is successful |
-| Response is JSON | Ensures response format is correct |
-| `data` is an array | Validates user list structure |
-| `data.length > 0` | Confirms users are returned |
-| Required user fields exist | Prevents frontend rendering issues |
-| Email contains "@" | Basic data validity check |
-| Response time < 800ms | Ensures acceptable performance |
-
----
-
-## Actual Result
-- All assertions passed in Postman
-
-## Notes
-- This API is typically used for frontend user list display
-- Validation focuses on preventing frontend runtime errors rather than business logic
+**Notes**
+- This scenario is validated by modifying the query parameter in an exis

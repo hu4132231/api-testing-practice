@@ -21,7 +21,7 @@ api-testing-practice/
 │  └─ reqres.postman_collection.json
 └─ test-cases/
    └─ list-users.md
-'''
+```
 
    
 ## Test Cases

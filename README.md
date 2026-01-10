@@ -19,7 +19,7 @@ api-testing-practice/
 ├─ postman/
 │  └─ Reqres API Test.postman_collection.json
 └─ test-cases/
-   └─ - GET List Users
+   └─ - GET list-users.md
 ```
 
 ## Test Cases

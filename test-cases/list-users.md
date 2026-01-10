@@ -47,13 +47,18 @@ GET https://reqres.in/api/users?page=2
 ## Negative / Edge Test Cases
 
 ### TC-LU-002: Request with invalid page parameter
+
 **Input**
-- GET `/users?page=invalid`
+- GET /users?page=invalid
 
 **Expected Results**
-- API returns status code `200` or appropriate error response
+- Status code is 200
 - Response structure remains valid
+- API returns default user list
 - No server error (5xx) occurs
+
+**Actual Result**
+- API returned a valid user list with status code 200
 
 ### TC-LU-003: Request with page parameter exceeding available pages
 **Input**

@@ -19,11 +19,11 @@ api-testing-practice/
 ├─ postman/
 │  └─ Reqres API Test.postman_collection.json
 └─ test-cases/
-   └─ - [GET List Users](test-cases/list-users.md) (completed with assertions)
+   └─ - GET List Users
 ```
 
 ## Test Cases
-- GET List Users (completed with assertions)
+- [GET List Users](test-cases/list-users.md) (completed with assertions)
 - GET Single User (planned)
 - POST Create User (planned)
 - Login scenarios (planned)

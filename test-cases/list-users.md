@@ -60,8 +60,6 @@ GET https://reqres.in/api/users?page=2
 **Actual Result**
 - API returned a valid user list with status code 200
 
----
-
 ### TC-LU-003: Request with page parameter exceeding available pages
 **Input**
 - GET `/users?page=999`

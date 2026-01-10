@@ -11,16 +11,19 @@ This repository is a hands-on practice project for API testing using public REST
 ## API Used
 - Reqres API (https://reqres.in)
 
+```md
 ## Project Structure
+```text
 api-testing-practice/
 ├─ README.md
 ├─ postman/
 │  └─ reqres.postman_collection.json
 └─ test-cases/
    └─ list-users.md
+
    
 ## Test Cases
-- GET List Users (completed)
+- GET List Users (completed with assertions)
 - GET Single User (planned)
 - POST Create User (planned)
 - Login scenarios (planned)

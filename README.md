@@ -29,8 +29,9 @@ api-testing-practice/
 - Login scenarios (planned)
 
 ## Tools
-- Postman (API request & assertions)
-- GitHub (version control & portfolio)
+- Postman: Used for sending API requests and validating responses with assertions.
+- GitHub: Version control and project hosting.
+- Postman collection is included under `/postman` for API request execution and assertions.
 
 ## Notes
 This project is continuously updated as I practice API testing and test case design for Junior QA / Testing Engineer roles.

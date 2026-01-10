@@ -40,4 +40,48 @@ GET https://reqres.in/api/users?page=2
   - `first_name` (string)
   - `last_name` (string)
   - `avatar` (string, valid URL)
-- Response time is less
+- Response time is less than 800ms
+
+---
+
+## Negative / Edge Test Cases
+
+### TC-LU-002: Request with invalid page parameter
+**Input**
+- GET `/users?page=invalid`
+
+**Expected Results**
+- API returns status code `200` or appropriate error response
+- Response structure remains valid
+- No server error (5xx) occurs
+
+### TC-LU-003: Request with page parameter exceeding available pages
+**Input**
+- GET `/users?page=999`
+
+**Expected Results**
+- Status code is `200`
+- `data` field exists and is an empty array
+
+---
+
+## Assertions Mapping (Postman)
+
+| Assertion | Purpose |
+|---------|--------|
+| Status code = 200 | Confirms API request is successful |
+| Response is JSON | Ensures response format is correct |
+| `data` is an array | Validates user list structure |
+| `data.length > 0` | Confirms users are returned |
+| Required user fields exist | Prevents frontend rendering issues |
+| Email contains "@" | Basic data validity check |
+| Response time < 800ms | Ensures acceptable performance |
+
+---
+
+## Actual Result
+- All assertions passed in Postman
+
+## Notes
+- This API is typically used for frontend user list display
+- Validation focuses on preventing frontend runtime errors rather than business logic

@@ -29,8 +29,8 @@ api-testing-practice/
 - Login scenarios (planned)
 
 ## Tools
-- Postman
-- GitHub
+- Postman (API request & assertions)
+- GitHub (version control & portfolio)
 
 ## Notes
 This project is continuously updated as I practice API testing and test case design for Junior QA / Testing Engineer roles.

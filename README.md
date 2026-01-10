@@ -13,6 +13,9 @@ This repository is a hands-on practice project for API testing using public REST
 
 
 ## Project Structure
+```md
+## Project Structure
+
 ```text
 api-testing-practice/
 ├─ README.md

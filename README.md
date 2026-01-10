@@ -13,8 +13,6 @@ This repository is a hands-on practice project for API testing using public REST
 
 
 ## Project Structure
-```md
-## Project Structure
 
 ```text
 api-testing-practice/
@@ -23,6 +21,8 @@ api-testing-practice/
 │  └─ reqres.postman_collection.json
 └─ test-cases/
    └─ list-users.md
+'''
+
    
 ## Test Cases
 - GET List Users (completed with assertions)

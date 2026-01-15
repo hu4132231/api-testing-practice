@@ -6,7 +6,8 @@ Verify that the List Users API returns user list data with correct structure, va
 ---
 
 ## Endpoint
-GET https://reqres.in/api/users
+Base URL: https://reqres.in/api  
+Endpoint: GET /users
 
 ---
 

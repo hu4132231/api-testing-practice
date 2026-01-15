@@ -67,11 +67,10 @@ Verify API behavior when the page parameter is invalid.
 **Expected Results**
 - Status code is `200`
 - Response structure remains valid
-- API falls back to default behavior
 - No server error (5xx) occurs
 
 **Notes**
-- This scenario is covered by a dedicated Postman request (TC-LU-002) to ensure repeatability and easier collection runs.
+- A dedicated Postman request is created for this case to ensure repeatability and easier collection runs.
 
 ---
 

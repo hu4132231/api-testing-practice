@@ -38,16 +38,18 @@ api-testing-practice/
 ```
 
 ## Test Cases
-- [GET List Users](test-cases/list-users.md) (completed with assertions)
-- GET Single User (planned)
-- POST Create User (planned)
-- Login scenarios (planned)
+
+- [GET /users — List Users API](test-cases/list-users.md) (completed)
+- [GET /users/{id} — Single User API](test-cases/get-single-user.md) (completed)
+- POST /users — Create User (planned)
+- POST /login — Login scenarios (planned)
 
 ## Tools
-- Postman: Used for sending API requests and validating responses with assertions.
-- GitHub: Version control and project hosting.
-- Postman collection is included under `/postman` for API request execution and assertions.
+
+- **Postman** — Sending API requests and validating responses with test scripts
+- **Git / GitHub** — Version control and project hosting
+- **Markdown** — Test case documentation
 
 ## Notes
-This project is continuously updated as I practice manual API testing
-and improve my test case design skills for Junior QA / Testing Engineer roles.
+
+This project is continuously updated to practice manual API testing and demonstrate test case design skills for **Junior QA / Testing Engineer** roles.

@@ -70,8 +70,7 @@ Verify API behavior when the page parameter is invalid.
 - No server error (5xx) occurs
 
 **Notes**
-- This scenario is validated by modifying the query parameter in an existing Postman request.
-- No separate request is created to avoid duplication.
+- This scenario is covered by a dedicated Postman request (TC-LU-002) to ensure repeatability and easier collection runs.
 
 ---
 
@@ -100,6 +99,13 @@ Verify API behavior when the requested page exceeds available data.
 - `data.length > 0`
 - Required user fields validation
 - Response time < 800ms
+
+ ### TC-LU-002
+- Status code is 200
+- Response is JSON
+- `data` exists and is an array
+- No server error (5xx)
+
 
 ### TC-LU-003
 - Status code is 200

@@ -1,17 +1,31 @@
-# API Testing Practice
+# 📂 QA Practice Project — API Testing (Reqres Public API)
 
-This repository is a hands-on practice project for API testing using public REST APIs.
+This repository is a hands-on QA practice project focused on **manual API testing** using a public REST API.  
+The project demonstrates structured test case design, API contract validation, and practical Postman testing workflows.
 
-## Purpose
-- Practice manual API testing
+---
+
+## 🎯 Project Goals
+
+- Practice manual API testing workflows
 - Design clear and structured test cases
-- Validate response status codes, headers, and bodies
-- Get familiar with Postman and basic QA workflows
+- Validate API responses, including:
+  - HTTP status codes
+  - Response headers
+  - Response body structure and field types
+- Verify API behavior for both **happy paths and negative scenarios**
+- Build QA thinking focused on **API contract stability and frontend safety**
 
-## API Used
-- Reqres API (https://reqres.in)
+---
 
-## Project Structure
+## 🧪 API Under Test
+
+**Reqres Public API**  
+https://reqres.in
+
+---
+
+## 📁 Project Structure
 
 ```text
 api-testing-practice/
@@ -19,7 +33,8 @@ api-testing-practice/
 ├─ postman/
 │  └─ Reqres API Test.postman_collection.json
 └─ test-cases/
-   └─ list-users.md
+   ├─ list-users.md
+   └─ get-single-user.md
 ```
 
 ## Test Cases

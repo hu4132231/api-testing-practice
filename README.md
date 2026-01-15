@@ -34,4 +34,5 @@ api-testing-practice/
 - Postman collection is included under `/postman` for API request execution and assertions.
 
 ## Notes
-This project is continuously updated as I practice API testing and test case design for Junior QA / Testing Engineer roles.
+This project is continuously updated as I practice manual API testing
+and improve my test case design skills for Junior QA / Testing Engineer roles.

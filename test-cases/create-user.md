@@ -30,7 +30,7 @@ Content-Type: application/json
 
 ---
 
-## Request Body Example
+### Request Body Example
 ```json
 {
   "name": "John",
@@ -41,8 +41,9 @@ Content-Type: application/json
 ---
 
 ## 📤 Expected Response (Success)
+
 ### Status Code
-### 201 Created
+201 Created
 
 ### Response Body
 ```json
@@ -73,16 +74,16 @@ Content-Type: application/json
   - createdAt (ISO 8601 timestamp)
 - Response time is within acceptable range
 
-##Notes
+### Notes
 - id and createdAt are system-generated
 - Do not assert fixed values
 
 ---
 
-## TC-CU-002 — Create user with missing optional field (job)
+### TC-CU-002 — Create user with missing optional field (job)
 
-###Request
-```josn
+### Request
+```json
 {
   "name": "John"
 }
@@ -94,31 +95,33 @@ Content-Type: application/json
 - Response body is stable and predictable
 - No unexpected fields are returned
 
-## QA Focus
+### QA Focus
 - Verify backend tolerance to partial input
 - Ensure frontend safety for optional fields
 
 ---
 
-## TC-CU-003 — Create user with empty request body
+### TC-CU-003 — Create user with empty request body
+
 ### Request
 ```json
 {}
 ```
 
-## Expected Result
+### Expected Result
 - Status code is predictable (201 or 400, based on API behavior)
 - No server error (5xx)
 - Response structure is stable
 - API does not crash
 
-## QA Focus
+### QA Focus
 - Input validation handling
 - API contract stability
 
 ---
 
-## TC-CU-004 — Create user with invalid data types
+### TC-CU-004 — Create user with invalid data types
+
 ### Request
 ```json
 {
@@ -127,13 +130,13 @@ Content-Type: application/json
 }
 ```
 
-## Expected Result
+### Expected Result
 - Status code is predictable
 - No server error (5xx)
 - API response is stable
 - Invalid data does not cause system failure
 
-## QA Focus
+### QA Focus
 - Defensive testing
 - Backend robustness
 
@@ -144,12 +147,13 @@ Content-Type: application/json
 ### Steps
 - Send the same valid request multiple times
 - Compare responses
-- Expected Result
+  
+### Expected Result
 - Each response contains a unique id
 - createdAt reflects request time
 - API does not reuse identifiers
 
-## QA Focus
+### QA Focus
 - Data uniqueness
 - Backend consistency
 

@@ -30,7 +30,7 @@ Content-Type: application/json
 
 ---
 
-### Request Body (Example)
+## Request Body Example
 ```json
 {
   "name": "John",
@@ -44,7 +44,7 @@ Content-Type: application/json
 ### Status Code
 ### 201 Created
 
-###Response Body
+### Response Body
 ```json
 {
   "name": "John",
@@ -60,19 +60,115 @@ Content-Type: application/json
 ### TC-CU-001 — Create user successfully (valid request)
 
 ### Request
-name: valid string
-job: valid string
+- name: valid string
+- job: valid string
 
 ### Expected Result
-Status code is 201
-Response format is JSON
-Response contains:
-  name (string)
-  job (string)
-  id (string, auto-generated)
-  createdAt (ISO 8601 timestamp)
-Response time is within acceptable range
+- Status code is 201
+- Response format is JSON
+- Response contains:
+  - name (string)
+  - job (string)
+  - id (string, auto-generated)
+  - createdAt (ISO 8601 timestamp)
+- Response time is within acceptable range
 
 ##Notes
-id and createdAt are system-generated
-Do not assert fixed values
+- id and createdAt are system-generated
+- Do not assert fixed values
+
+---
+
+## TC-CU-002 — Create user with missing optional field (job)
+
+###Request
+```josn
+{
+  "name": "John"
+}
+```
+
+### Expected Result
+- Status code is 201
+- API does not return server error (5xx)
+- Response body is stable and predictable
+- No unexpected fields are returned
+
+## QA Focus
+- Verify backend tolerance to partial input
+- Ensure frontend safety for optional fields
+
+---
+
+## TC-CU-003 — Create user with empty request body
+### Request
+```json
+{}
+```
+
+## Expected Result
+- Status code is predictable (201 or 400, based on API behavior)
+- No server error (5xx)
+- Response structure is stable
+- API does not crash
+
+## QA Focus
+- Input validation handling
+- API contract stability
+
+---
+
+## TC-CU-004 — Create user with invalid data types
+### Request
+```json
+{
+  "name": 123,
+  "job": true
+}
+```
+
+## Expected Result
+- Status code is predictable
+- No server error (5xx)
+- API response is stable
+- Invalid data does not cause system failure
+
+## QA Focus
+- Defensive testing
+- Backend robustness
+
+---
+
+## TC-CU-005 — Verify auto-generated fields behavior
+
+### Steps
+- Send the same valid request multiple times
+- Compare responses
+- Expected Result
+- Each response contains a unique id
+- createdAt reflects request time
+- API does not reuse identifiers
+
+## QA Focus
+- Data uniqueness
+- Backend consistency
+
+---
+
+## 🧠 QA Notes / Testing Mindset
+
+- This API does not persist data, but contract validation is still critical
+- Focus on:
+  - Response stability
+  - Predictable status codes
+  - Frontend-safe behavior
+- Avoid asserting exact values for:
+  - idc
+  - reatedAt
+ 
+---
+
+## 🧰 Tools Used
+- Postman — request execution & test scripts
+- JavaScript assertions — response validation
+- GitHub — test case documentation

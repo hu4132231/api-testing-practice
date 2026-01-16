@@ -1,36 +1,46 @@
-# 🧪 Create User API Test Cases
+# POST /users — Create User API
+
+## Test Objective
+Verify that the Create User API correctly handles user creation requests, returns a stable and predictable response structure, and safely handles invalid or incomplete input without causing server errors.
+
+---
 
 ## Endpoint
-**POST** `/users`
-
-## API
-Reqres Public API
+Base URL: https://reqres.in/api  
+Endpoint: POST /users
 
 ---
 
-## 📌 API Description
-
-Create a new user with provided name and job information.  
-This API simulates user creation and returns a generated `id` and `createdAt` timestamp.
-
----
-
-## 📥 Request Specification
-
-### Method
-POST
-
-### Endpoint
-`/users`
-
-### Headers
-```http
-Content-Type: application/json
-```
+## Test Scope
+- HTTP response status and format
+- Request body handling and validation
+- Response contract validation
+- Auto-generated fields behavior (`id`, `createdAt`)
+- API response performance
 
 ---
 
-### Request Body Example
+## Out of Scope
+- Authentication / authorization
+- Backend data persistence
+- Database or external service validation
+
+---
+
+## Preconditions
+- API base URL is reachable
+- No authentication is required
+
+---
+
+## Test Cases
+
+### TC-CU-001: Create user successfully with valid request
+
+**Description**  
+Verify that the API successfully creates a user when valid input data is provided.
+
+**Request**
 ```json
 {
   "name": "John",
@@ -38,141 +48,134 @@ Content-Type: application/json
 }
 ```
 
----
-
-## 📤 Expected Response (Success)
-
-### Status Code
-201 Created
-
-### Response Body
-```json
-{
-  "name": "John",
-  "job": "QA Engineer",
-  "id": "123",
-  "createdAt": "2026-01-15T08:00:00.000Z"
-}
-```
-
----
-
-## ✅ Test Cases
-### TC-CU-001 — Create user successfully (valid request)
-
-### Request
-- name: valid string
-- job: valid string
-
-### Expected Result
+**Expected Results**
 - Status code is 201
 - Response format is JSON
-- Response contains:
+- Response body contains:
   - name (string)
   - job (string)
   - id (string, auto-generated)
   - createdAt (ISO 8601 timestamp)
-- Response time is within acceptable range
+- Auto-generated fields are present and non-empty
+- Response time is under 800ms
 
-### Notes
-- id and createdAt are system-generated
-- Do not assert fixed values
+**Notes**
+- Do not assert exact values for id and createdAt
 
 ---
 
-### TC-CU-002 — Create user with missing optional field (job)
+### TC-CU-002: Create user with missing optional field (job)
 
-### Request
+**Description**
+Verify API behavior when an optional field is omitted from the request body.
+
+**Request**
 ```json
 {
   "name": "John"
 }
 ```
 
-### Expected Result
+**Expected Results**
 - Status code is 201
-- API does not return server error (5xx)
-- Response body is stable and predictable
+- No server error (5xx) occurs
+- Response structure is stable and predictable
 - No unexpected fields are returned
-
-### QA Focus
-- Verify backend tolerance to partial input
-- Ensure frontend safety for optional fields
+- Response time is under 800ms
 
 ---
 
-### TC-CU-003 — Create user with empty request body
+### TC-CU-003: Create user with empty request body
 
-### Request
+**Description**
+Verify API stability when an empty request body is sent.
+
+**Request**
 ```json
 {}
 ```
 
-### Expected Result
+**Expected Results**
 - Status code is predictable (201 or 400, based on API behavior)
-- No server error (5xx)
-- Response structure is stable
+- No server error (5xx) occurs
+- Response structure remains stable
 - API does not crash
-
-### QA Focus
-- Input validation handling
-- API contract stability
+- Response time is under 800ms
 
 ---
 
-### TC-CU-004 — Create user with invalid data types
+### TC-CU-004: Create user with invalid data types
 
-### Request
+**Description**
+Verify API robustness when request body contains invalid data types.
+
+**Request**
 ```json
 {
   "name": 123,
   "job": true
 }
 ```
-
-### Expected Result
+**Expected Results**
 - Status code is predictable
-- No server error (5xx)
-- API response is stable
-- Invalid data does not cause system failure
-
-### QA Focus
-- Defensive testing
-- Backend robustness
+- No server error (5xx) occurs
+- API response remains stable
+- Invalid input does not cause system failure
+- Response time is under 800ms
 
 ---
 
-### TC-CU-005 — Verify auto-generated fields behavior
+### TC-CU-005: Verify auto-generated fields behavior
 
-### Steps
+**Description**
+Verify that auto-generated fields are unique and correctly generated for each request.
+
+**Steps**
 - Send the same valid request multiple times
 - Compare responses
-  
-### Expected Result
+
+**Expected Results**
 - Each response contains a unique id
 - createdAt reflects request time
 - API does not reuse identifiers
-
-### QA Focus
-- Data uniqueness
-- Backend consistency
+- Response time is under 800ms
 
 ---
 
-## 🧠 QA Notes / Testing Mindset
+## Postman Assertions Mapping
 
-- This API does not persist data, but contract validation is still critical
-- Focus on:
-  - Response stability
-  - Predictable status codes
-  - Frontend-safe behavior
-- Avoid asserting exact values for:
-  - id
-  - createdAt
- 
+### TC-CU-001
+- Status code is 201
+- Response is JSON
+- Required response fields validation
+- id exists and is non-empty
+- createdAt matches ISO 8601 format
+- Response time < 800ms
+
+### TC-CU-002
+- Status code is 201
+- No server error (5xx)
+- Response structure is stable
+- Response time < 800ms
+
+### #TC-CU-003
+- No server error (5xx)
+- Status code is predictable
+- Response structure is stable
+- Response time < 800ms
+
+### TC-CU-004
+- No server error (5xx)
+- Response is stable
+- Response time < 800ms
+
+### TC-CU-005
+- Auto-generated id values are unique
+- createdAt values differ between requests
+- Response time < 800ms
+
 ---
 
-## 🧰 Tools Used
-- Postman — request execution & test scripts
-- JavaScript assertions — response validation
-- GitHub — test case documentation
+## Notes
+- This API does not persist data.
+- Test cases focus on API contract stability, defensive testing, and frontend-safe behavior.

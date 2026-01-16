@@ -178,5 +178,6 @@ Verify that auto-generated fields are unique and correctly generated for each re
 ---
 
 ## Notes
-- This API does not persist data.
-- Test cases focus on API contract stability, defensive testing, and frontend-safe behavior.
+- Reqres APIs are public and do not require authentication.
+- When running requests via Postman API Network / Cloud execution, an `x-api-key` may be required by the gateway; missing it can result in `403 Forbidden`.
+- This header is environment-specific and not part of the Reqres API contract.

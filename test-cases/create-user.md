@@ -40,9 +40,39 @@ Content-Type: application/json
 
 ---
 
-### 📤 Expected Response (Success)
-Status Code
+## 📤 Expected Response (Success)
+### Status Code
+### 201 Created
 
-201 Created
+###Response Body
+```json
+{
+  "name": "John",
+  "job": "QA Engineer",
+  "id": "123",
+  "createdAt": "2026-01-15T08:00:00.000Z"
+}
+```
 
-Response Body
+---
+
+## ✅ Test Cases
+### TC-CU-001 — Create user successfully (valid request)
+
+### Request
+name: valid string
+job: valid string
+
+### Expected Result
+Status code is 201
+Response format is JSON
+Response contains:
+  name (string)
+  job (string)
+  id (string, auto-generated)
+  createdAt (ISO 8601 timestamp)
+Response time is within acceptable range
+
+##Notes
+id and createdAt are system-generated
+Do not assert fixed values

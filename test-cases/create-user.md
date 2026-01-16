@@ -167,8 +167,8 @@ Content-Type: application/json
   - Predictable status codes
   - Frontend-safe behavior
 - Avoid asserting exact values for:
-  - idc
-  - reatedAt
+  - id
+  - createdAt
  
 ---
 

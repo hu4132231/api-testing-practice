@@ -25,11 +25,17 @@ POST
 
 ### Headers
 ```http
-Content-Type: application/json
+Content-Type: application/json```
+
+### Request Body
+```md
+### Request Body Example
+```json
 {
   "name": "John",
   "job": "QA Engineer"
 }
+
 📤 Expected Response (Success)
 Status Code
 

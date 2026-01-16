@@ -116,6 +116,7 @@ Verify API robustness when request body contains invalid data types.
   "job": true
 }
 ```
+
 **Expected Results**
 - Status code is predictable
 - No server error (5xx) occurs

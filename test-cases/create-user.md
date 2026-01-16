@@ -159,7 +159,7 @@ Verify that auto-generated fields are unique and correctly generated for each re
 - Response structure is stable
 - Response time < 800ms
 
-### #TC-CU-003
+### TC-CU-003
 - No server error (5xx)
 - Status code is predictable
 - Response structure is stable

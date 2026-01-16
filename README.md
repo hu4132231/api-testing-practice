@@ -53,5 +53,5 @@ api-testing-practice/
 ## Notes
 This project is continuously updated to practice manual API testing and demonstrate test case design skills for Junior QA / Testing Engineer roles.
 
-Only test cases with explicit QA design are documented under `/test-cases`.
+Only test cases with explicit QA design and validation logic are documented under `/test-cases`.
 Official API examples are kept in Postman as reference and are not duplicated as test documentation.

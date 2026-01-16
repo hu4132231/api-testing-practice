@@ -142,7 +142,7 @@ Content-Type: application/json
 
 ---
 
-## TC-CU-005 — Verify auto-generated fields behavior
+### TC-CU-005 — Verify auto-generated fields behavior
 
 ### Steps
 - Send the same valid request multiple times

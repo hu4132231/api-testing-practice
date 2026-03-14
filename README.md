@@ -1,57 +1,43 @@
-# 📂 QA Practice Project — API Testing (Reqres Public API)
+# Reqres API Testing Project
 
-This repository is a hands-on QA practice project focused on **manual API testing** using a public REST API.  
-The project demonstrates structured test case design, API contract validation, and practical Postman testing workflows.
+## Project Overview
+This project is a simple API testing practice project using Reqres public API and Postman.
 
----
+The purpose of this project is to practice:
+- API request and response validation
+- Status code checking
+- Response structure validation
+- Positive and negative test case design
 
-## 🎯 Project Goals
+## Tools Used
+- Postman
+- Reqres API
+- Markdown
 
-- Practice manual API testing workflows
-- Design clear and structured test cases
-- Validate API responses, including:
-  - HTTP status codes
-  - Response headers
-  - Response body structure and field types
-- Verify API behavior for both **happy paths and negative scenarios**
-- Build QA thinking focused on **API contract stability and frontend safety**
+## APIs Covered
+- GET /users?page=2
+- GET /users/{id}
+- POST /users
+- POST /login
 
----
+## Test Scenarios
+This project includes both positive and negative test cases, such as:
+- valid request
+- missing required field
+- empty request body
+- non-existent resource
 
-## 🧪 API Under Test
+## How to Run
+1. Open the Postman collection
+2. Select the request you want to test
+3. Click **Send**
+4. Review response data and test results in the **Tests** tab
 
-**Reqres Public API**  
-https://reqres.in
-
----
-
-## 📁 Project Structure
-
-```text
-api-testing-practice/
-├─ README.md
-├─ postman/
-│  └─ Reqres API Test.postman_collection.json
-└─ test-cases/
-   ├─ list-users.md
-   └─ get-single-user.md
-```
-
-## Test Cases
-
-- [GET /users — List Users API](test-cases/list-users.md) (completed)
-- [GET /users/{id} — Single User API](test-cases/get-single-user.md) (completed)
-- POST /users — Create User (planned)
-- POST /login — Login scenarios (planned)
-
-## Tools
-
-- **Postman** — Sending API requests and validating responses with test scripts
-- **Git / GitHub** — Version control and project hosting
-- **Markdown** — Test case documentation
+## Project Structure
+- `postman/` → Postman collection
+- `test-cases/` → API test case documents
+- `README.md` → project summary
 
 ## Notes
-This project is continuously updated to practice manual API testing and demonstrate test case design skills for Junior QA / Testing Engineer roles.
-
-Only test cases with explicit QA design and validation logic are documented under `/test-cases`.
-Official API examples are kept in Postman as reference and are not duplicated as test documentation.
+This project uses Reqres demo API for practice purposes.
+Some negative scenarios are based on actual observed API behavior from the demo service.

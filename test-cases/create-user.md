@@ -1,183 +1,84 @@
 # POST /users — Create User API
 
-## Test Objective
-Verify that the Create User API correctly handles user creation requests, returns a stable and predictable response structure, and safely handles invalid or incomplete input without causing server errors.
+## API
+- **Method:** POST
+- **Endpoint:** `/api/users`
 
----
-
-## Endpoint
-Base URL: https://reqres.in/api  
-Endpoint: POST /users
-
----
-
-## Test Scope
-- HTTP response status and format
-- Request body handling and validation
-- Response contract validation
-- Auto-generated fields behavior (`id`, `createdAt`)
-- API response performance
-
----
-
-## Out of Scope
-- Authentication / authorization
-- Backend data persistence
-- Database or external service validation
-
----
-
-## Preconditions
-- API base URL is reachable
-- No authentication is required
-
----
+## Objective
+Verify that the Create User API returns expected response data for valid and incomplete request bodies.
 
 ## Test Cases
 
-### TC-CU-001: Create user successfully with valid request
+### TC-CU-001 - Create User - valid name and job
 
 **Description**  
-Verify that the API successfully creates a user when valid input data is provided.
+Verify that the API can create a user successfully with valid `name` and `job`.
 
-**Request**
+**Request Body**
 ```json
 {
-  "name": "John",
-  "job": "QA Engineer"
+  "name": "morpheus",
+  "job": "leader"
 }
 ```
+Expected Result
 
-**Expected Results**
-- Status code is 201
-- Response format is JSON
-- Response body contains:
-  - name (string)
-  - job (string)
-  - id (string, auto-generated)
-  - createdAt (ISO 8601 timestamp)
-- Auto-generated fields are present and non-empty
-- Response time is under 800ms
+Status code is 201
 
-**Notes**
-- Do not assert exact values for id and createdAt
+Response contains name
 
----
+Response contains job
 
-### TC-CU-002: Create user with missing optional field (job)
+Response contains id
 
-**Description**
-Verify API behavior when an optional field is omitted from the request body.
+Response contains createdAt
 
-**Request**
-```json
+TC-CU-002 - Create User - missing job
+
+Description
+Verify the API behavior when job is missing in the request body.
+
+Request Body
+
 {
-  "name": "John"
+  "name": "morpheus"
 }
-```
 
-**Expected Results**
-- Status code is 201
-- No server error (5xx) occurs
-- Response structure is stable and predictable
-- No unexpected fields are returned
-- Response time is under 800ms
+Expected Result
 
----
+Status code is 201
 
-### TC-CU-003: Create user with empty request body
+Response contains name
 
-**Description**
-Verify API stability when an empty request body is sent.
+Response contains id
 
-**Request**
-```json
+Response contains createdAt
+
+Response does not contain job
+
+TC-CU-003 - Create User - empty body
+
+Description
+Verify the API behavior when the request body is empty.
+
+Request Body
+
 {}
-```
 
-**Expected Results**
-- Status code is predictable (201 or 400, based on API behavior)
-- No server error (5xx) occurs
-- Response structure remains stable
-- API does not crash
-- Response time is under 800ms
+Expected Result
 
----
+Status code is 201
 
-### TC-CU-004: Create user with invalid data types
+Response contains id
 
-**Description**
-Verify API robustness when request body contains invalid data types.
+Response contains createdAt
 
-**Request**
-```json
-{
-  "name": 123,
-  "job": true
-}
-```
+Response does not contain name
 
-**Expected Results**
-- Status code is predictable
-- No server error (5xx) occurs
-- API response remains stable
-- Invalid input does not cause system failure
-- Response time is under 800ms
+Response does not contain job
 
----
+Notes
 
-### TC-CU-005: Verify auto-generated fields behavior
+This API is tested using Reqres demo service.
 
-**Description**
-Verify that auto-generated fields are unique and correctly generated for each request.
-
-**Steps**
-- Send the same valid request multiple times
-- Compare responses
-
-**Expected Results**
-- Each response contains a unique id
-- createdAt reflects request time
-- API does not reuse identifiers
-- Response time is under 800ms
-
----
-
-## Postman Assertions Mapping
-
-### TC-CU-001
-- Status code is 201
-- Response is JSON
-- Required response fields validation
-- id exists and is non-empty
-- createdAt matches ISO 8601 format
-- Response time < 800ms
-
-### TC-CU-002
-- Status code is 201
-- No server error (5xx)
-- Response structure is stable
-- Response time < 800ms
-
-### TC-CU-003
-- No server error (5xx)
-- Status code is predictable
-- Response structure is stable
-- Response time < 800ms
-
-### TC-CU-004
-- No server error (5xx)
-- Response is stable
-- Response time < 800ms
-
-### TC-CU-005
-- Auto-generated id values are unique
-- createdAt values differ between requests
-- Response time < 800ms
-
----
-
-## Notes
-- Reqres APIs are public and do not require authentication.
-- When running requests via Postman API Network / Cloud execution, an `x-api-key` may be required by the gateway; missing it can result in `403 Forbidden`.
-- This header is environment-specific and not part of the Reqres API contract.
+Negative test cases are based on actual observed API behavior.

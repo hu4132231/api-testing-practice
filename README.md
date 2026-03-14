@@ -1,7 +1,7 @@
 # Reqres API Testing Project
 
 ## Project Overview
-This project is a simple API testing practice project using Reqres public API and Postman.
+This project is a simple API testing practice project using Postman and Reqres public API.
 
 The purpose of this project is to practice:
 - API request and response validation
@@ -19,19 +19,6 @@ The purpose of this project is to practice:
 - GET /users/{id}
 - POST /users
 - POST /login
-
-## Test Scenarios
-This project includes both positive and negative test cases, such as:
-- valid request
-- missing required field
-- empty request body
-- non-existent resource
-
-## How to Run
-1. Open the Postman collection
-2. Select the request you want to test
-3. Click **Send**
-4. Review response data and test results in the **Tests** tab
 
 ## Project Structure
 - `postman/` → Postman collection

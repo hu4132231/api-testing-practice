@@ -65,6 +65,8 @@ api-testing-practice/
 └─ README.md
 ```
 
+---
+
 ## Test Case Documentation
 
 Each API module includes a separate markdown file under the `test-cases/` folder.

@@ -61,6 +61,7 @@ api-testing-practice/
 │  ├─ create-user.md
 │  ├─ get-single-user.md
 │  ├─ list-users.md
+│  ├─ login.md
 │  └─ ...
 └─ README.md
 ```

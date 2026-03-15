@@ -142,6 +142,7 @@ Use the **Collection Runner** in Postman to execute all test cases together.
 - **List Users**: valid page, different page values, non-existent page
 - **Single User**: valid user ID, user not found, invalid user ID
 - **Create User**: valid payload, missing field, empty body
+- **Login**: successful login, missing password, empty body
 
 ---
 

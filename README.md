@@ -59,7 +59,7 @@ api-testing-practice/
 │  └─ Reqres API Test.postman_collection.json
 ├─ test-cases/
 │  ├─ create-user.md
-│  ├─ get-single-user.md
+│  ├─ single-user.md
 │  ├─ list-users.md
 │  ├─ login.md
 │  └─ ...

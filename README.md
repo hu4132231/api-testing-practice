@@ -106,7 +106,7 @@ Example checks include:
 ### 1. Clone this repository
 
 ```bash
-git clone <your-repository-url>
+git clone <Reqres API Test.postman_collection.json>
 ```
 
 ### 2. Open Postman

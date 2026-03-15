@@ -105,11 +105,11 @@ Example checks include:
 
 ### 1. Open this repository on GitHub
 
-Review the project structure, README, and test case documents under the test-cases/ folder.
+Review the project structure, README, and test case documents under the `test-cases/` folder.
 
 ### 2. Open Postman
 
-Import the Postman collection file from the postman/ folder.
+Import the Postman collection file from the `postman/` folder.
 
 ### 3. Select a request
 

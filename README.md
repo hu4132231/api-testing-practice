@@ -101,17 +101,15 @@ Example checks include:
 
 ---
 
-## How to Run
+## How to Use
 
-### 1. Clone this repository
+### 1. Open this repository on GitHub
 
-```bash
-git clone <https://github.com/hu4132231/api-testing-practice/blob/main/postman/Reqres%20API%20Test.postman_collection.json>
-```
+Review the project structure, README, and test case documents under the test-cases/ folder.
 
 ### 2. Open Postman
 
-Import the Postman collection file from the `postman/` folder.
+Import the Postman collection file from the postman/ folder.
 
 ### 3. Select a request
 

@@ -51,11 +51,11 @@ Verify that the API still returns a success response when job is missing, based 
 - Request Body:
 ```json
 {
-  "name": "Jill",
+  "name": "Jill"
 }
 ```
 
-**Expected Result***
+**Expected Result**
 - Status code is 201
 - Response contains name
 - Response contains id
@@ -66,7 +66,7 @@ Verify that the API still returns a success response when job is missing, based 
 
 ---
 
-## TC-CU-003 - Create User - empty request body
+### TC-CU-003 - Create User - empty request body
 
 **Description**
 Verify how the API behaves when an empty request body is sent.
@@ -86,3 +86,5 @@ Verify how the API behaves when an empty request body is sent.
 - name is not returned in the response
 - job is not returned in the response
 - Response time is under 1000ms
+
+---

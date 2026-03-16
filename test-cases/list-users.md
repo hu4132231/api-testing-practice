@@ -1,7 +1,8 @@
 # GET /users — List Users API
 
 ## API
-- **Method:** GET
+- **Method:** `GET`
+- **Base URL:** `https://reqres.in`
 - **Endpoint:** `/api/users`
 
 ## Objective
@@ -18,7 +19,7 @@ Verify that the API returns a user list successfully for page 2.
 
 **Request**
 - Method: `GET`
-- Endpoint: `/api/users?page=2`
+- Endpoint: `/api/users`
 - Query Params: `page=2`
 - Request Body: Not applicable
 
@@ -42,7 +43,7 @@ Verify that the API returns a user list successfully for page 1.
 
 **Request**
 - Method: `GET`
-- Endpoint: `/api/users?page=1`
+- Endpoint: `/api/users`
 - Query Params: `page=1`
 - Request Body: Not applicable
 
@@ -66,7 +67,7 @@ Verify that the API handles a page number beyond the total available pages by re
 
 **Request**
 - Method: `GET`
-- Endpoint: `/api/users?page=999`
+- Endpoint: `/api/users`
 - Query Params: `page=999`
 - Request Body: Not applicable
 

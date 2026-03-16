@@ -13,7 +13,7 @@ The goal of this project is to practice core API testing skills, including:
 - Basic response time validation
 - Test case documentation and organization
 
-This project is organized as a small QA-style portfolio project to demonstrate test design thinking, request validation, and basic Postman test implementation.
+This project is organized as a small QA-style portfolio project to demonstrate test case design, request validation, and basic Postman test implementation.
 
 ---
 
@@ -95,6 +95,7 @@ In Postman, each request includes test scripts for validating key response condi
 - Basic response structure
 - Array existence where applicable
 - Basic response time checks
+- Value matching between request and response where applicable
 
 Example checks include:
 

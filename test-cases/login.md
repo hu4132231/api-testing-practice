@@ -45,7 +45,7 @@ Verify that login fails when the password field is missing.
 - Request Body:
 ```json
 {
-  "email": "eve.holt@reqres.in",
+  "email": "eve.holt@reqres.in"
 }
 ```
 

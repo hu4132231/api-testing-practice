@@ -32,19 +32,12 @@ Verify that the API creates a user successfully when both `name` and `job` are p
 **Expected Result**
 
 - Status code is 201
-
 - Response contains name
-
 - Response contains job
-
 - Response contains id
-
 - Response contains createdAt
-
 - Returned name matches the request body
-
 - Returned job matches the request body
-
 - Response time is under 1000ms
 
 ---
@@ -69,18 +62,14 @@ Verify that the API still returns a success response when job is missing, based 
 **Expected Result***
 
 - Status code is 201
-
 - Response contains name
-
 - Response contains id
-
 - Response contains createdAt
-
 - Returned name matches the request body
-
 - job is not returned in the response
-
 - Response time is under 1000ms
+
+---
 
 ## TC-CU-003 - Create User - empty request body
 

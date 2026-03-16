@@ -26,7 +26,6 @@ Verify that the API creates a user successfully when both `name` and `job` are p
   "name": "Jill",
   "job": "QA engineer"
 }
-
 ```
 
 **Expected Result**
@@ -55,8 +54,6 @@ Verify that the API still returns a success response when job is missing, based 
   "name": "Jill",
 }
 ```
-
----
 
 **Expected Result***
 - Status code is 201

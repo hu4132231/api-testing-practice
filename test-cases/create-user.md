@@ -1,67 +1,99 @@
 # POST /users — Create User API
 
 ## API
-- **Method:** POST
+- **Method:** `POST`
+- **Base URL:** `https://reqres.in`
 - **Endpoint:** `/api/users`
 
 ## Objective
-Verify that the Create User API returns expected response data for valid and incomplete request bodies.
+Verify that the Create User API returns the expected response for valid and incomplete request bodies based on the mock behavior of Reqres.
+
+---
 
 ## Test Cases
 
 ### TC-CU-001 - Create User - valid name and job
 
 **Description**  
-Verify that the API can create a user successfully with valid `name` and `job`.
+Verify that the API creates a user successfully when both `name` and `job` are provided.
 
-**Request Body**
+**Request**
+- Method: `POST`
+- Endpoint: `/api/users`
+- Request Body:
 ```json
 {
-  "name": "morpheus",
-  "job": "leader"
+  "name": "Jill",
+  "job": "QA engineer"
+}
+
+```
+
+**Expected Result**
+
+- Status code is 201
+
+- Response contains name
+
+- Response contains job
+
+- Response contains id
+
+- Response contains createdAt
+
+- Returned name matches the request body
+
+- Returned job matches the request body
+
+- Response time is under 1000ms
+
+---
+
+### TC-CU-002 - Create User - missing job
+
+**Description**
+Verify that the API still returns a success response when job is missing, based on the mock behavior of Reqres.
+
+**Request**
+- Method: `POST`
+- Endpoint: `/api/users`
+- Request Body:
+```json
+{
+  "name": "Jill",
 }
 ```
-Expected Result
 
-Status code is 201
+---
 
-Response contains name
+**Expected Result***
 
-Response contains job
+- Status code is 201
 
-Response contains id
+- Response contains name
 
-Response contains createdAt
+- Response contains id
 
-TC-CU-002 - Create User - missing job
+- Response contains createdAt
 
-Description
-Verify the API behavior when job is missing in the request body.
+- Returned name matches the request body
 
-Request Body
+- job is not returned in the response
 
-{
-  "name": "morpheus"
-}
+- Response time is under 1000ms
 
-Expected Result
-
-Status code is 201
-
-Response contains name
-
-Response contains id
-
-Response contains createdAt
-
-Response does not contain job
-
-TC-CU-003 - Create User - empty body
+## TC-CU-003 - Create User - empty request body
 
 Description
-Verify the API behavior when the request body is empty.
+Verify how the API behaves when an empty request body is sent.
 
-Request Body
+Request
+
+Method: POST
+
+Endpoint: /api/users
+
+Request Body:
 
 {}
 
@@ -73,12 +105,8 @@ Response contains id
 
 Response contains createdAt
 
-Response does not contain name
+name is not returned in the response
 
-Response does not contain job
+job is not returned in the response
 
-Notes
-
-This API is tested using Reqres demo service.
-
-Negative test cases are based on actual observed API behavior.
+Response time is under 1000ms

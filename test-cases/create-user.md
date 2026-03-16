@@ -42,7 +42,7 @@ Verify that the API creates a user successfully when both `name` and `job` are p
 
 ### TC-CU-002 - Create User - missing job
 
-**Description**
+**Description**  
 Verify that the API still returns a success response when job is missing, based on the mock behavior of Reqres.
 
 **Request**
@@ -68,7 +68,7 @@ Verify that the API still returns a success response when job is missing, based 
 
 ### TC-CU-003 - Create User - empty request body
 
-**Description**
+**Description**  
 Verify how the API behaves when an empty request body is sent.
 
 **Request**

@@ -79,5 +79,5 @@ Verify that the API handles a page number beyond the total available pages by re
 - Response contains `total_pages`
 - Response contains `data`
 - `data` is an array
-- `data` is an empty array
+- `data` is empty
 - Response time is under `1000ms`

@@ -31,23 +31,24 @@ This project is organized as a small QA-style portfolio project to demonstrate t
 This project currently covers the following API modules:
 
 ### List Users
-- Valid page request
-- Different page values
-- Non-existent page handling
+- Valid page 1
+- Valid page 2
+- Page beyond total pages
 
 ### Single User
-- Valid user ID
-- User not found scenario
-- Invalid user ID scenario
+- Valid existing user ID
+- Another valid user ID
+- Non-existing user ID
 
 ### Create User
-- Valid request body
-- Missing field scenario
-- Empty body scenario
+- Valid name and job
+- Missing job
+- Empty request body
 
 ### Login
-- Successful login
-- Negative login scenarios
+- Valid email and password
+- Missing password
+- Missing email
 
 ---
 
@@ -87,13 +88,13 @@ This helps keep the testing process organized and makes the project easier to re
 
 ## Postman Test Coverage
 
-In Postman, each request includes test scripts for validating:
+In Postman, each request includes test scripts for validating key response conditions such as:
 
 - Status code
-- Key fields in the response body
-- Response structure
-- Array existence
-- Response time
+- Required fields in the response body
+- Basic response structure
+- Array existence where applicable
+- Basic response time checks
 
 Example checks include:
 
@@ -118,9 +119,10 @@ Import the Postman collection file from the `postman/` folder.
 
 Choose any request from the collection, such as:
 
-- `TC-LU-001 - List Users - page=2`
-- `TC-SU-001 - Single User - id=2`
+- `TC-LU-001 - List Users - valid page 2`
+- `TC-SU-001 - Single User - valid existing user id`
 - `TC-CU-001 - Create User - valid name and job`
+- `TC-LI-001 - Login - valid email and password`
 
 ### 4. Send the request
 
@@ -139,10 +141,10 @@ Use the **Collection Runner** in Postman to execute all test cases together.
 
 ## Example Test Scenarios
 
-- **List Users**: valid page, different page values, non-existent page
-- **Single User**: valid user ID, user not found, invalid user ID
-- **Create User**: valid payload, missing field, empty body
-- **Login**: successful login, missing password, empty body
+- **List Users**: valid page 1, valid page 2, page beyond total pages
+- **Single User**: valid existing user ID, another valid existing user ID, non-existing user ID
+- **Create User**: valid name and job, missing job, empty request body
+- **Login**: valid email and password, missing password, missing email
 
 ---
 

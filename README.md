@@ -120,7 +120,7 @@ Import the Postman collection file from the `postman/` folder.
 Choose any request from the collection, such as:
 
 - `TC-LU-001 - List Users - valid page 2`
-- `TC-SU-001 - Single User - valid existing user id`
+- `TC-SU-001 - Single User - valid existing user ID`
 - `TC-CU-001 - Create User - valid name and job`
 - `TC-LI-001 - Login - valid email and password`
 

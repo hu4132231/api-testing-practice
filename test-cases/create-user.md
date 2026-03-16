@@ -86,5 +86,3 @@ Verify how the API behaves when an empty request body is sent.
 - name is not returned in the response
 - job is not returned in the response
 - Response time is under 1000ms
-
----

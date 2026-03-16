@@ -142,7 +142,7 @@ Use the **Collection Runner** in Postman to execute all test cases together.
 
 ## Example Test Scenarios
 
-- **List Users**: valid page 1, valid page 2, page beyond total pages
+- **List Users**: valid page 2, valid page 1, page beyond total pages
 - **Single User**: valid existing user ID, another valid existing user ID, non-existing user ID
 - **Create User**: valid name and job, missing job, empty request body
 - **Login**: valid email and password, missing password, missing email
@@ -175,8 +175,8 @@ Through this project, I practiced:
 Possible next improvements for this project:
 
 - Add more endpoints such as update user and delete user
-- Add JSON schema validation
 - Add environment variables in Postman
+- Add JSON schema validation
 - Add automated collection run screenshots or reports
 - Improve negative test coverage for request body validation
 

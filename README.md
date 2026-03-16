@@ -31,8 +31,8 @@ This project is organized as a small QA-style portfolio project to demonstrate t
 This project currently covers the following API modules:
 
 ### List Users
-- Valid page 1
 - Valid page 2
+- Valid page 1
 - Page beyond total pages
 
 ### Single User

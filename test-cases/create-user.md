@@ -30,7 +30,6 @@ Verify that the API creates a user successfully when both `name` and `job` are p
 ```
 
 **Expected Result**
-
 - Status code is 201
 - Response contains name
 - Response contains job
@@ -60,7 +59,6 @@ Verify that the API still returns a success response when job is missing, based 
 ---
 
 **Expected Result***
-
 - Status code is 201
 - Response contains name
 - Response contains id
@@ -73,29 +71,21 @@ Verify that the API still returns a success response when job is missing, based 
 
 ## TC-CU-003 - Create User - empty request body
 
-Description
+**Description**
 Verify how the API behaves when an empty request body is sent.
 
-Request
-
-Method: POST
-
-Endpoint: /api/users
-
-Request Body:
-
+**Request**
+- Method: `POST`
+- Endpoint: `/api/users`
+- Request Body:
+```json
 {}
+```
 
-Expected Result
-
-Status code is 201
-
-Response contains id
-
-Response contains createdAt
-
-name is not returned in the response
-
-job is not returned in the response
-
-Response time is under 1000ms
+**Expected Result**
+- Status code is 201
+- Response contains id
+- Response contains createdAt
+- name is not returned in the response
+- job is not returned in the response
+- Response time is under 1000ms

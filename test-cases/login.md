@@ -1,3 +1,5 @@
+# POST /login — Login API
+
 ## API
 - **Method:** `POST`
 - **Base URL:** `https://reqres.in`

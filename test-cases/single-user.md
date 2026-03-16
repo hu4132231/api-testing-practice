@@ -1,7 +1,8 @@
 # GET /users/{id} — Single User API
 
 ## API
-- **Method:** GET
+- **Method:** `GET`
+- **Base URL:** `https://reqres.in`
 - **Endpoint:** `/api/users/{id}`
 
 ## Objective

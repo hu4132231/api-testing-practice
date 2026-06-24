@@ -222,7 +222,7 @@ Through this project, I practiced:
 * Organizing test cases in a readable documentation format
 * Recording validation logic clearly
 * Documenting API behavior limitations
-* Building a small but complete QA-style testing project for portfolio use
+* Building a complete QA-style testing project for portfolio use
 
 ---
 

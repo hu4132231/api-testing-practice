@@ -2,27 +2,30 @@
 
 ## Project Overview
 
-This is a simple API testing practice project built with **Postman** and the **Reqres public API**.
+This is an API testing and QA documentation practice project built with **Postman** and the **Reqres public API**.
 
-The goal of this project is to practice core API testing skills, including:
+The goal of this project is to practice core API testing and documentation skills, including:
 
-- API request and response validation
-- Status code verification
-- Response structure checking
-- Positive and negative test case design
-- Basic response time validation
-- Test case documentation and organization
+* API request and response validation
+* HTTP status code verification
+* Response body and data structure checking
+* Positive and negative test case design
+* Basic response time validation
+* Test case documentation and organization
+* Validation record organization and issue traceability
 
-This project is organized as a small QA-style portfolio project to demonstrate test case design, request validation, and basic Postman test implementation.
+This project is organized as a small QA-style portfolio project to demonstrate test case design, request validation, testing documentation, and structured validation records.
+
+It also focuses on presenting test cases in a clear and traceable format, which is useful for QA documentation, issue tracking, technical document handling, and validation process support.
 
 ---
 
 ## Tools Used
 
-- **Postman** — for API request creation, test execution, and response validation
-- **Reqres API** — as the public API for testing practice
-- **GitHub** — for project version control and documentation
-- **Markdown** — for writing test case documents
+* **Postman** — API request creation, test execution, and response validation
+* **Reqres API** — Public API used for testing practice
+* **GitHub** — Version control and project documentation
+* **Markdown** — Test case and project documentation
 
 ---
 
@@ -31,24 +34,28 @@ This project is organized as a small QA-style portfolio project to demonstrate t
 This project currently covers the following API modules:
 
 ### List Users
-- Valid page 2
-- Valid page 1
-- Page beyond total pages
+
+* Valid page 2
+* Valid page 1
+* Page beyond total pages
 
 ### Single User
-- Valid existing user ID
-- Another valid user ID
-- Non-existing user ID
+
+* Valid existing user ID
+* Another valid existing user ID
+* Non-existing user ID
 
 ### Create User
-- Valid name and job
-- Missing job
-- Empty request body
+
+* Valid name and job
+* Missing job
+* Empty request body
 
 ### Login
-- Valid email and password
-- Missing password
-- Missing email
+
+* Valid email and password
+* Missing password
+* Missing email
 
 ---
 
@@ -73,16 +80,17 @@ api-testing-practice/
 
 Each API module includes a separate markdown file under the `test-cases/` folder.
 
-These documents typically include:
+The test case documents typically include:
 
-- API method and endpoint
-- Test objective
-- Test case ID
-- Test description
-- Request details
-- Expected results
+* API method and endpoint
+* Test objective
+* Test case ID
+* Test description
+* Request details
+* Expected results
+* Validation points
 
-This helps keep the testing process organized and makes the project easier to review.
+This helps keep the testing process organized and makes the project easier to review, maintain, and trace.
 
 ---
 
@@ -90,71 +98,104 @@ This helps keep the testing process organized and makes the project easier to re
 
 In Postman, each request includes test scripts for validating key response conditions such as:
 
-- Status code
-- Required fields in the response body
-- Basic response structure
-- Array existence where applicable
-- Basic response time checks
-- Value matching between request and response where applicable
+* Status code
+* Required fields in the response body
+* Basic response structure
+* Array existence where applicable
+* Basic response time checks
+* Value matching between request and response where applicable
 
-Example checks include:
+Example validation checks include:
 
-- Status code equals expected value
-- Response contains required fields
-- Returned data type matches expectation
-- Response time is within acceptable range
+* Status code equals the expected value
+* Response contains required fields
+* Returned data type matches expectation
+* Response time is within an acceptable range
+* Error response appears when required input is missing
+
+---
+
+## Validation Approach
+
+The project uses a basic QA validation approach:
+
+1. Understand the API endpoint and expected behavior
+2. Define positive and negative test scenarios
+3. Create test cases with clear expected results
+4. Execute requests in Postman
+5. Verify status code, response body, and key fields
+6. Record test logic and validation points in documentation
+
+This approach helps build a clear connection between test scenarios, expected outcomes, and actual API responses.
 
 ---
 
 ## How to Use
 
-### 1. Open this repository on GitHub
+### 1. Review the Repository
 
-Review the project structure, README, and test case documents under the `test-cases/` folder.
+Open this repository on GitHub and review:
+
+* Project structure
+* README file
+* Test case documents under the `test-cases/` folder
+* Postman collection under the `postman/` folder
 
 ### 2. Open Postman
 
-Import the Postman collection file from the `postman/` folder.
+Import the Postman collection file from the `postman/` folder:
 
-### 3. Select a request
+```bash
+Reqres API Test.postman_collection.json
+```
+
+### 3. Select a Request
 
 Choose any request from the collection, such as:
 
-- `TC-LU-001 - List Users - valid page 2`
-- `TC-SU-001 - Single User - valid existing user ID`
-- `TC-CU-001 - Create User - valid name and job`
-- `TC-LI-001 - Login - valid email and password`
+* `TC-LU-001 - List Users - valid page 2`
+* `TC-SU-001 - Single User - valid existing user ID`
+* `TC-CU-001 - Create User - valid name and job`
+* `TC-LI-001 - Login - valid email and password`
 
-### 4. Send the request
+### 4. Send the Request
 
-Review:
+Review the following items in Postman:
 
-- Request URL
-- Response status
-- Response body
-- Test results in the **Tests** tab
+* Request method and URL
+* Request body, if applicable
+* Response status code
+* Response body
+* Test results in the **Tests** tab
 
-### 5. Run the full collection (optional)
+### 5. Run the Full Collection
 
-Use the **Collection Runner** in Postman to execute all test cases together.
+Use the **Collection Runner** in Postman to execute all test cases together and review the overall test results.
 
 ---
 
 ## Example Test Scenarios
 
-- **List Users**: valid page 2, valid page 1, page beyond total pages
-- **Single User**: valid existing user ID, another valid existing user ID, non-existing user ID
-- **Create User**: valid name and job, missing job, empty request body
-- **Login**: valid email and password, missing password, missing email
+| Module      | Scenario                 | Expected Focus                             |
+| ----------- | ------------------------ | ------------------------------------------ |
+| List Users  | Valid page 2             | Status code, user list, response structure |
+| List Users  | Page beyond total pages  | Empty data handling                        |
+| Single User | Valid user ID            | User data and required fields              |
+| Single User | Non-existing user ID     | Error handling and status code             |
+| Create User | Valid name and job       | Created user response validation           |
+| Create User | Empty request body       | API behavior with missing input            |
+| Login       | Valid email and password | Token response validation                  |
+| Login       | Missing password         | Error response validation                  |
 
 ---
 
-## Notes / Limitations
+## Notes and Limitations
 
-- **Reqres is a public practice API**, so some endpoints simulate behavior rather than performing real database operations.
-- Some POST requests may return mock success responses without actual persistence.
-- This project focuses on API request/response validation, not full backend data verification.
-- Certain negative cases may reflect the mock API design rather than production-level backend validation logic.
+* **Reqres is a public practice API**, so some endpoints simulate behavior rather than performing real database operations.
+* Some POST requests may return mock success responses without actual data persistence.
+* This project focuses on API request and response validation, not full backend database verification.
+* Certain negative cases may reflect the mock API design rather than production-level backend validation logic.
+* This project is intended as a practice portfolio project for API testing, QA documentation, and validation process learning.
 
 ---
 
@@ -162,23 +203,27 @@ Use the **Collection Runner** in Postman to execute all test cases together.
 
 Through this project, I practiced:
 
-- Writing structured API test cases
-- Designing both positive and negative scenarios
-- Organizing test cases in a readable format
-- Using Postman for request validation
-- Building a small but complete QA-style testing project for portfolio use
+* Writing structured API test cases
+* Designing positive and negative test scenarios
+* Using Postman to validate API responses
+* Checking HTTP status codes and response fields
+* Organizing test cases in a readable documentation format
+* Recording validation logic clearly
+* Building a small but complete QA-style testing project for portfolio use
 
 ---
 
 ## Future Improvements
 
-Possible next improvements for this project:
+Possible next improvements for this project include:
 
-- Add more endpoints such as update user and delete user
-- Add environment variables in Postman
-- Add JSON schema validation
-- Add automated collection run screenshots or reports
-- Improve negative test coverage for request body validation
+* Add more endpoints, such as update user and delete user
+* Add Postman environment variables
+* Add JSON schema validation
+* Add test execution summary reports
+* Add automated collection run screenshots or exported reports
+* Improve negative test coverage for request body validation
+* Add issue tracking examples for failed or unexpected test results
 
 ---
 

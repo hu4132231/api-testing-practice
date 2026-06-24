@@ -15,7 +15,7 @@ The goal of this project is to practice core API testing and documentation skill
 * Test case documentation and organization
 * Validation record organization and issue traceability
 
-This project is organized as a small QA-style portfolio project to demonstrate test case design, request validation, testing documentation, and structured validation records.
+This project is organized as a QA-style portfolio project to demonstrate test case design, request validation, testing documentation, and structured validation records.
 
 It also focuses on presenting test cases in a clear and traceable format, which is useful for QA documentation, issue tracking, technical document handling, and validation process support.
 
@@ -68,9 +68,9 @@ api-testing-practice/
 │  └─ Reqres API Test.postman_collection.json
 ├─ test-cases/
 │  ├─ create-user.md
-│  ├─ single-user.md
 │  ├─ list-users.md
-│  └─ login.md
+│  ├─ login.md
+│  └─ single-user.md
 └─ README.md
 ```
 

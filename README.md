@@ -10,6 +10,7 @@ The goal of this project is to practice core API testing and documentation skill
 * HTTP status code verification
 * Response body and data structure checking
 * Positive and negative test case design
+* Boundary and out-of-range scenario checking
 * Basic response time validation
 * Test case documentation and organization
 * Validation record organization and issue traceability
@@ -69,8 +70,7 @@ api-testing-practice/
 │  ├─ create-user.md
 │  ├─ single-user.md
 │  ├─ list-users.md
-│  ├─ login.md
-│  └─ ...
+│  └─ login.md
 └─ README.md
 ```
 
@@ -85,10 +85,12 @@ The test case documents typically include:
 * API method and endpoint
 * Test objective
 * Test case ID
+* Test type, such as positive, negative, boundary, or mock API behavior check
 * Test description
 * Request details
 * Expected results
 * Validation points
+* Notes about API behavior and limitations where applicable
 
 This helps keep the testing process organized and makes the project easier to review, maintain, and trace.
 
@@ -104,6 +106,7 @@ In Postman, each request includes test scripts for validating key response condi
 * Array existence where applicable
 * Basic response time checks
 * Value matching between request and response where applicable
+* Error response handling for missing required fields
 
 Example validation checks include:
 
@@ -112,6 +115,7 @@ Example validation checks include:
 * Returned data type matches expectation
 * Response time is within an acceptable range
 * Error response appears when required input is missing
+* Empty or out-of-range responses are handled consistently
 
 ---
 
@@ -120,11 +124,12 @@ Example validation checks include:
 The project uses a basic QA validation approach:
 
 1. Understand the API endpoint and expected behavior
-2. Define positive and negative test scenarios
+2. Define positive, negative, boundary, and mock API behavior scenarios
 3. Create test cases with clear expected results
 4. Execute requests in Postman
 5. Verify status code, response body, and key fields
 6. Record test logic and validation points in documentation
+7. Add notes when the API behavior is affected by mock API limitations
 
 This approach helps build a clear connection between test scenarios, expected outcomes, and actual API responses.
 
@@ -163,6 +168,7 @@ Choose any request from the collection, such as:
 Review the following items in Postman:
 
 * Request method and URL
+* Query parameters or path parameters
 * Request body, if applicable
 * Response status code
 * Response body
@@ -176,16 +182,20 @@ Use the **Collection Runner** in Postman to execute all test cases together and 
 
 ## Example Test Scenarios
 
-| Module      | Scenario                 | Expected Focus                             |
-| ----------- | ------------------------ | ------------------------------------------ |
-| List Users  | Valid page 2             | Status code, user list, response structure |
-| List Users  | Page beyond total pages  | Empty data handling                        |
-| Single User | Valid user ID            | User data and required fields              |
-| Single User | Non-existing user ID     | Error handling and status code             |
-| Create User | Valid name and job       | Created user response validation           |
-| Create User | Empty request body       | API behavior with missing input            |
-| Login       | Valid email and password | Token response validation                  |
-| Login       | Missing password         | Error response validation                  |
+| Module      | Scenario                 | Test Type               | Expected Focus                                 |
+| ----------- | ------------------------ | ----------------------- | ---------------------------------------------- |
+| List Users  | Valid page 2             | Positive                | Status code, user list, response structure     |
+| List Users  | Valid page 1             | Positive                | Status code, user list, response structure     |
+| List Users  | Page beyond total pages  | Boundary / out-of-range | Empty data handling and structure consistency  |
+| Single User | Valid user ID            | Positive                | User data and required fields                  |
+| Single User | Another valid user ID    | Positive                | User data and path parameter handling          |
+| Single User | Non-existing user ID     | Negative / not found    | 404 response and no user data                  |
+| Create User | Valid name and job       | Positive                | Created user response validation               |
+| Create User | Missing job              | Mock API behavior check | Response behavior with incomplete request body |
+| Create User | Empty request body       | Mock API behavior check | Response behavior with missing input           |
+| Login       | Valid email and password | Positive                | Token response validation                      |
+| Login       | Missing password         | Negative                | Error response validation                      |
+| Login       | Missing email            | Negative                | Error response validation                      |
 
 ---
 
@@ -193,6 +203,7 @@ Use the **Collection Runner** in Postman to execute all test cases together and 
 
 * **Reqres is a public practice API**, so some endpoints simulate behavior rather than performing real database operations.
 * Some POST requests may return mock success responses without actual data persistence.
+* Some incomplete request bodies may still return a successful response because of the mock API design.
 * This project focuses on API request and response validation, not full backend database verification.
 * Certain negative cases may reflect the mock API design rather than production-level backend validation logic.
 * This project is intended as a practice portfolio project for API testing, QA documentation, and validation process learning.
@@ -204,11 +215,13 @@ Use the **Collection Runner** in Postman to execute all test cases together and 
 Through this project, I practiced:
 
 * Writing structured API test cases
-* Designing positive and negative test scenarios
+* Designing positive, negative, boundary, and mock API behavior scenarios
 * Using Postman to validate API responses
 * Checking HTTP status codes and response fields
+* Verifying response body structure and required fields
 * Organizing test cases in a readable documentation format
 * Recording validation logic clearly
+* Documenting API behavior limitations
 * Building a small but complete QA-style testing project for portfolio use
 
 ---
@@ -220,6 +233,7 @@ Possible next improvements for this project include:
 * Add more endpoints, such as update user and delete user
 * Add Postman environment variables
 * Add JSON schema validation
+* Add a test case summary file or test plan document
 * Add test execution summary reports
 * Add automated collection run screenshots or exported reports
 * Improve negative test coverage for request body validation

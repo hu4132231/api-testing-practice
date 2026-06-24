@@ -1,4 +1,4 @@
-# Reqres API Testing Project
+# API Testing & QA Documentation Practice Project
 
 ## Project Overview
 
